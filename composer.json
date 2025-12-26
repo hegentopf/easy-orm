@@ -2,6 +2,7 @@
   "name": "hegentopf/easy-orm",
   "description": "Lightweight ORM for PHP with automatic model generation",
   "type": "library",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "Hegentopf\\EasyOrm\\": "src/"
