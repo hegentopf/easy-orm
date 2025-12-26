@@ -1,0 +1,7 @@
+<phpunit
+    bootstrap="../../bootstrap.php"
+    colors="true"
+    testdox="true"
+    verbose="true"
+    >
+</phpunit>

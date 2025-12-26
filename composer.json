@@ -1,0 +1,30 @@
+{
+  "name": "hegentopf/easy-orm",
+  "description": "Lightweight ORM for PHP with automatic model generation",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Hegentopf\\EasyOrm\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hegentopf\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": ">=8.1",
+    "ext-pdo": "*",
+    "mustache/mustache": "^3.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6",
+    "vlucas/phpdotenv": "^5.5"
+  },
+  "authors": [
+    {
+      "name": "Michael Helmert",
+      "email": "easy-orm@hegentopf.de"
+    }
+  ]
+}
