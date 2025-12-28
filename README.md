@@ -7,7 +7,7 @@ This document provides examples and explanations for using EasyORM, including mo
 Install via Composer:
 
 ```bash
-composer require hegentopf/easyorm
+composer require hegentopf/easy-orm
 ```
 
 ## Basic Usage
