@@ -283,12 +283,12 @@ abstract class DbModel implements JsonSerializable
         };
     }
 
-    public static function __callStatic($name, $arguments)
+    public static function __callStatic( $name, $arguments )
     {
-        if (!in_array($name, array_keys(static::$columnTypes), true)) {
-            throw new \InvalidArgumentException("Column '$name' does not exist in model " . static::class);
+        if ( !in_array( $name, array_keys( static::$columnTypes ), true ) ) {
+            throw new \InvalidArgumentException( "Column '$name' does not exist in model " . static::class );
         }
-        return new DbColumn(static::class, $name);
+        return new DbColumn( static::class, $name );
     }
 
     public function jsonSerialize(): mixed
@@ -296,6 +296,7 @@ abstract class DbModel implements JsonSerializable
         $objVars = get_object_vars( $this );
 
         $added = array();
+
         if ( isset( $objVars[ 'addedColumns' ] ) ) {
             $added = $objVars[ 'addedColumns' ];
         }
@@ -303,11 +304,15 @@ abstract class DbModel implements JsonSerializable
         unset( $objVars[ 'changedColumns' ] );
         unset( $objVars[ 'connectionName' ] );
 
-        $array = array();
-        $array += $objVars;
-        $array += $added;
+        foreach ( $objVars as $name => &$value ) {
+            $value = $this->uncastValue( $name, $value );
+        }
 
-        return $array;
+        $result = array();
+        $result += $objVars;
+        $result += $added;
+
+        return $result;
     }
 
 }
