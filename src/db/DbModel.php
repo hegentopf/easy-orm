@@ -301,6 +301,7 @@ abstract class DbModel implements JsonSerializable
         }
         unset( $objVars[ 'addedColumns' ] );
         unset( $objVars[ 'changedColumns' ] );
+        unset( $objVars[ 'connectionName' ] );
 
         $array = array();
         $array += $objVars;
