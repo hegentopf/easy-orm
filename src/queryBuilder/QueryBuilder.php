@@ -30,7 +30,7 @@ class QueryBuilder extends QueryBuilderAbstract implements Stringable
         $this->dbModelClass = $dbModelClass;
     }
 
-    public function where( QueryBuilder|DbColumn|DbExpression|string $column, QueryBuilder|DbColumn|DbExpression|string $operator = null, QueryBuilder|DbColumn|DbExpression|string $value = null ): static
+    public function where( QueryBuilder|DbColumn|DbExpression|string $column, QueryBuilder|DbColumn|DbExpression|string|null $operator = null, QueryBuilder|DbColumn|DbExpression|string|null $value = null ): static
     {
 
         $this->where->where( $column, $operator, $value );
@@ -253,7 +253,7 @@ class QueryBuilder extends QueryBuilderAbstract implements Stringable
         return $this;
     }
 
-    public function take( int $limit, int $offset = null ): static
+    public function take( int $limit, ?int $offset = null ): static
     {
 
         $this->limit->take( $limit, $offset );

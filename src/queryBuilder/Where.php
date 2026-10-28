@@ -10,7 +10,7 @@ class Where extends QueryBuilderAbstract
     private array $whereArr;
 
 
-    public function where( QueryBuilder|DbColumn|DbExpression|string $column, QueryBuilder|DbColumn|DbExpression|string $operator = null, QueryBuilder|DbColumn|DbExpression|string $value = null ): static
+    public function where( QueryBuilder|DbColumn|DbExpression|string $column, QueryBuilder|DbColumn|DbExpression|string|null $operator = null, QueryBuilder|DbColumn|DbExpression|string|null $value = null ): static
     {
 
         $this->checkForSubqueries( array($column, $operator, $value) );

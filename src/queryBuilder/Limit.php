@@ -29,7 +29,7 @@ class Limit extends QueryBuilderAbstract
         $this->sqlString .= ' ';
     }
 
-    public function limit( int $limit, int $offset = null ): void
+    public function limit( int $limit, ?int $offset = null ): void
     {
         $this->limit = $limit;
         $this->offset = $offset;
@@ -40,7 +40,7 @@ class Limit extends QueryBuilderAbstract
         $this->offset = $int;
     }
 
-    public function take( int $limit, int $offset = null ): void
+    public function take( int $limit, ?int $offset = null ): void
     {
         $this->limit( $limit, $offset );
     }

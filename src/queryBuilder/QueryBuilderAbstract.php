@@ -31,7 +31,7 @@ abstract class QueryBuilderAbstract
         return $this->sqlString;
     }
 
-    public function __construct( DbModel $dbModel = null )
+    public function __construct( ?DbModel $dbModel = null )
     {
 
         if ( $dbModel === null ) {
